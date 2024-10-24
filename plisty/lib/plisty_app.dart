@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/generated/l10n.dart';
 import 'package:plisty/splash/splash_screen.dart';
 
+import 'core/utils/app_colors.dart';
 import 'features/on_boarding/on_boarding_screen.dart';
 
 class PlistyApp extends StatelessWidget {
@@ -17,27 +19,35 @@ class PlistyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-              locale: const Locale('ar'),
-              localizationsDelegates: const [
-                //l;
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                scaffoldBackgroundColor: Colors.white,
-                fontFamily: 'Nunito',
-                bottomAppBarTheme: const BottomAppBarTheme(
-                  color: Colors.white,
-
-                  // Set the default color here if needed
+            locale: const Locale('ar'),
+            localizationsDelegates: const [
+              //l;
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: cLightBlackColor,
+              appBarTheme: const AppBarTheme(
+                elevation: 0,
+                backgroundColor: cLightBlackColor,
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  statusBarBrightness: Brightness.dark,
+                  statusBarColor: Colors.transparent,
+                  statusBarIconBrightness: Brightness.light,
                 ),
               ),
-              home: const SplashScreen(),
-              );
+              fontFamily: 'Nunito',
+              bottomAppBarTheme: const BottomAppBarTheme(
+                color: Colors.white,
+                // Set the default color here if needed
+              ),
+            ),
+            home: const SplashScreen(),
+          );
         });
   }
 }

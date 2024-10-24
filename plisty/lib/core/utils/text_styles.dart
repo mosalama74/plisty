@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/app_colors.dart';
 
+
+
 //------- 8 ---------
 TextStyle ts8Black600 = TextStyle(
   color: cBlackColor,
@@ -147,21 +149,26 @@ TextStyle ts18Black400 = TextStyle(
 );
 
 //------- 20 ---------
-TextStyle ts20white600 = TextStyle(
+TextStyle ts20Black400 = TextStyle(
+    color: cBlackColor,
+    fontWeight: FontWeight.w400,
+    fontSize: 20.sp,
+    );
+TextStyle ts20Black600 = TextStyle(
     color: cBlackColor,
     fontWeight: FontWeight.w600,
     fontSize: 20.sp,
-    fontFamily: 'ReadexPro');
+    );
 TextStyle ts20Black700 = TextStyle(
     color: cBlackColor,
     fontWeight: FontWeight.w700,
     fontSize: 20.sp,
-    fontFamily: 'ReadexPro');
+    );
 TextStyle ts20Black900 = TextStyle(
     color: cBlackColor,
     fontWeight: FontWeight.w900,
     fontSize: 20.sp,
-    fontFamily: 'ReadexPro');
+   );
 
 //------- 24 ---------
 TextStyle ts24Green700 = TextStyle(

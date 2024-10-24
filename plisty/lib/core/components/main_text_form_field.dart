@@ -84,68 +84,74 @@ class MainTextFormField extends StatelessWidget {
                 style: labelStyle ?? ts14Black400),
             SizedBox(height: 12.h),
           ],
-          TextFormField(
-            onTap: onTap,
-            validator: validator ??
-            
-                (value) {
-                  if (value == null || value.isEmpty) {
-                return '';
-              }
-              return null;
-                },
-            maxLines: maxLines,
-            onChanged: onChanged,
-            controller: controller,
-            cursorColor: cursorColor ?? cPrimaryColor,
-            inputFormatters:
-                (keyboardType != null && keyboardType == TextInputType.number)
-                    ? [
-                        ArabicToEnglishNumberFormatter(),
-                      ]
-                    : [],
-            enabled: enabled,
-            keyboardType: keyboardType ?? TextInputType.text,
-            textAlignVertical: TextAlignVertical.center,
-            
-            obscureText: obscureText,
-            style: hintStyle ?? ts14Black400,
-            maxLength: maxLength,
-            decoration: InputDecoration(
-              filled: filled ?? true,
-              fillColor: fillColor ?? cLightGreyColor,
-              hintText: hintText,
-              constraints: isTextArea == true
-                  ? null
-                  : BoxConstraints(
-                      minHeight: 24.h,
-                      maxHeight: maxLength == null ? 64.h : 80.h,
-                    ),
-              alignLabelWithHint: true,
-              prefix: prefix,
-              suffixIcon: asyncIcon == true
-                  ? IconButton(
-                      onPressed: onPressedSuffix ?? () {},
-                      icon: Icon(
-                        suffixIcon ?? Icons.search,
-                        color: suffixColor ?? cBlackColor,
-                        size: suffixSize ?? 14.r,
-                      ))
-                  : suffixWidget,
-              errorBorder: errorBorder ??
-                  mainEnabledInputBorder.copyWith(
-                      borderSide: const BorderSide(
-                    color: cErrorColor,
-                  )),
-              prefixIconConstraints:
-                  BoxConstraints.expand(width: 24.w, height: 0.h),
-              prefixIcon: const SizedBox(),
-              hintStyle:
-                  hintStyle ?? ts14Black400.copyWith(color: cNewGreyColor),
-              enabledBorder: enabledBorder ?? mainEnabledInputBorder,
-              disabledBorder: disabledBorder ?? mainEnabledInputBorder,
-              focusedBorder: focusedBorder ?? mainEnabledInputBorder,
-              border: enabledBorder ?? mainEnabledInputBorder,
+          Container(
+            decoration: BoxDecoration(
+                  color: cDarkGreyColor,
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+            child: TextFormField(
+              onTap: onTap,
+              validator: validator ??
+              
+                  (value) {
+                    if (value == null || value.isEmpty) {
+                  return '';
+                }
+                return null;
+                  },
+              maxLines: maxLines,
+              onChanged: onChanged,
+              controller: controller,
+              cursorColor: cursorColor ?? cPrimaryColor,
+              inputFormatters:
+                  (keyboardType != null && keyboardType == TextInputType.number)
+                      ? [
+                          ArabicToEnglishNumberFormatter(),
+                        ]
+                      : [],
+              enabled: enabled,
+              keyboardType: keyboardType ?? TextInputType.text,
+              textAlignVertical: TextAlignVertical.center,
+              
+              obscureText: obscureText,
+              style: hintStyle ?? ts14Black400,
+              maxLength: maxLength,
+              decoration: InputDecoration(
+                filled: filled ?? true,
+                fillColor: fillColor ?? cLightGreyColor,
+                hintText: hintText,
+                constraints: isTextArea == true
+                    ? null
+                    : BoxConstraints(
+                        minHeight: 24.h,
+                        maxHeight: maxLength == null ? 64.h : 80.h,
+                      ),
+                alignLabelWithHint: true,
+                prefix: prefix,
+                suffixIcon: asyncIcon == true
+                    ? IconButton(
+                        onPressed: onPressedSuffix ?? () {},
+                        icon: Icon(
+                          suffixIcon ?? Icons.search,
+                          color: suffixColor ?? cBlackColor,
+                          size: suffixSize ?? 14.r,
+                        ))
+                    : suffixWidget,
+                errorBorder: errorBorder ??
+                    mainEnabledInputBorder.copyWith(
+                        borderSide: const BorderSide(
+                      color: cErrorColor,
+                    )),
+                prefixIconConstraints:
+                    BoxConstraints.expand(width: 24.w, height: 0.h),
+                prefixIcon: const SizedBox(),
+                hintStyle:
+                    hintStyle ?? ts14Black400.copyWith(color: cNewGreyColor),
+                enabledBorder: enabledBorder ?? mainEnabledInputBorder,
+                disabledBorder: disabledBorder ?? mainEnabledInputBorder,
+                focusedBorder: focusedBorder ?? mainEnabledInputBorder,
+                border: enabledBorder ?? mainEnabledInputBorder,
+              ),
             ),
           )
         ],

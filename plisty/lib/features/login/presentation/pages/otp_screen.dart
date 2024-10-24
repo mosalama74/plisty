@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:plisty/features/login/presentation/widgets/localize_widget.dart';
+import 'package:plisty/core/utils/extentions.dart';
+import 'package:plisty/features/home/presentation/screens/dashpoard_screen.dart';
+import 'package:plisty/features/login/presentation/widgets/drop_down_widget.dart';
 import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
@@ -10,6 +12,7 @@ import '../../../../core/components/main_elevated_button.dart';
 import '../../../../core/services/service_locator.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';
+import '../../../home/presentation/screens/home_screen.dart';
 import '../../cubit/otp_cubit.dart';
 import '../widgets/custom_pin_code_field.dart';
 import '../widgets/reset_code_widget.dart';
@@ -41,12 +44,8 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => OtpCubit(sl()),
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
+      child: Container(
+         decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/images/Login.png',
@@ -54,12 +53,29 @@ class _OtpScreenState extends State<OtpScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
-            ),
-            SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.only(top: 69.25.h, left: 41.w, right: 44.w),
+
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+        body: 
+            Padding(
+              padding: EdgeInsets.only(top: 69.25.h, left: 41.w, right: 24.w),
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    Align(
+                      alignment: AlignmentDirectional.topStart,
+                      child: IconButton(
+                        style: IconButton.styleFrom(
+                          backgroundColor: cLightBlackColor.withOpacity(.4),
+                          iconSize: 11.5.h,
+                          padding: EdgeInsets.all(10.h),
+                        ),
+                          onPressed: () {
+                            context.navigateBack();
+                          },
+                          icon: Icon(Icons.arrow_back_ios_outlined,
+                              color: cWhiteColor, size: 15.h)),
+                    ),
                     SvgPicture.asset(
                       'assets/svg/logo.svg',
                       width: 128.w,
@@ -144,7 +160,8 @@ class _OtpScreenState extends State<OtpScreen> {
                             //           token: widget.token,
                             //         );
                             //   }
-                            // }
+                            // }set
+                            context.navigateToAndRemoveAll(const DashpoardScreen());
                           },
                         );
                       },
@@ -182,15 +199,16 @@ class _OtpScreenState extends State<OtpScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 150.h,
+                      height: 120.h,
                     ),
-                    const LocalizeWidget(),
+                  const LocalizeWidget(),
                   ],
                 ),
               ),
             ),
-          ],
-        ),
+          
+        
+      ),
       ),
     );
   }
