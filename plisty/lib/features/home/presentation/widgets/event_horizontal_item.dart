@@ -27,7 +27,7 @@ class EventHorizontalItem extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: MediaQuery.of(context).size.width - 59.w,
+          width: MediaQuery.sizeOf(context).width - 55.w,
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 3.61.h),
           decoration: BoxDecoration(
             color: cNavColor,
