@@ -4,10 +4,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/utils/app_colors.dart';
 
-class NavBar extends StatelessWidget {
+class NavBar extends StatefulWidget {
   const NavBar({super.key, required this.onTap, required this.pageIndex});
   final int pageIndex;
   final Function(int) onTap;
+
+  @override
+  State<NavBar> createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -23,28 +29,28 @@ class NavBar extends StatelessWidget {
           children: [
             navItem(
               'assets/icons/home-2.svg',
-              pageIndex == 0,
-              onTap: onTap(0),
+              widget.pageIndex == 0,
+              onTap: widget.onTap(0),
             ),
             navItem(
               'assets/icons/discover.svg',
-              pageIndex == 1,
-              onTap: onTap(1),
+              widget.pageIndex == 1,
+              onTap: widget.onTap(1),
             ),
             navItem(
               'assets/icons/discount-shape.svg',
-              pageIndex == 2,
-              onTap: onTap(2),
+              widget.pageIndex == 2,
+              onTap: widget.onTap(2),
             ),
             navItem(
               'assets/icons/ticket.svg',
-              pageIndex == 3,
-              onTap: onTap(3),
+              widget.pageIndex == 3,
+              onTap: widget.onTap(3),
             ),
             navItem(
               'assets/icons/user.svg',
-              pageIndex == 4,
-              onTap: onTap(4),
+              widget.pageIndex == 4,
+              onTap: widget.onTap(4),
             ),
           ],
         ),

@@ -38,7 +38,7 @@ class _DashpoardScreenState extends State<DashpoardScreen> {
       onTap: (index){
          if (index == currentIndex) {
           } else {
-                          currentIndex = 0;
+                      
 
            /*  setState(() {
               currentIndex = index;

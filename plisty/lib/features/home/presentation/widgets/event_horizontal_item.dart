@@ -24,17 +24,17 @@ class EventHorizontalItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width - 59.w,
-      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 3.61.h),
-      decoration: BoxDecoration(
-        color: cNavColor,
-        borderRadius: BorderRadius.circular(4.r),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
+    return Stack(
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width - 59.w,
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 3.61.h),
+          decoration: BoxDecoration(
+            color: cNavColor,
+            borderRadius: BorderRadius.circular(4.r),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 82.77.w,
@@ -48,61 +48,37 @@ class EventHorizontalItem extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-             
-            ],
-          ),
-          SizedBox(
-            width: 10.h,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              SizedBox(
+                width: 10.h,
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GradientText(
-                      text: eventName,
-                      style: ts14Black700.copyWith(color: cWhiteColor),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const GradientIcon(icon: Icons.favorite,size: 20,),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.calendar_month_outlined,
-                      color: cPrimaryColor,
-                      size: 16.h,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GradientText(
+                          text: eventName,
+                          style: ts14Black700.copyWith(color: cWhiteColor),
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: const GradientIcon(
+                            icon: Icons.favorite,
+                            size: 20,
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
-                      width: 5.w,
+                      height: 5.h,
                     ),
-                    Text(
-                      eventDate,
-                      style: ts12Black400.copyWith(color: cDarkWhiteColor2),
-                      maxLines: 1,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.location_on_sharp,
+                          Icons.calendar_month_outlined,
                           color: cPrimaryColor,
                           size: 16.h,
                         ),
@@ -110,22 +86,70 @@ class EventHorizontalItem extends StatelessWidget {
                           width: 5.w,
                         ),
                         Text(
-                          eventLocation,
+                          eventDate,
                           style: ts12Black400.copyWith(color: cDarkWhiteColor2),
                           maxLines: 1,
                         ),
                       ],
                     ),
-                    GradientButton(
-                      btnName: eventSort,
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.location_on_sharp,
+                              color: cPrimaryColor,
+                              size: 16.h,
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              eventLocation,
+                              style: ts12Black400.copyWith(
+                                  color: cDarkWhiteColor2),
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                        GradientButton(
+                          btnName: eventSort,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+
+          
+          right: -20,
+          child: Transform.rotate(
+            angle: 45 * 3.14159 / 180,
+            child: Container(
+              padding: EdgeInsetsDirectional.only(top: 4.79.h,start:15.w),
+              height: 24.h,
+              width: 80,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(4.r),
+                  topLeft: Radius.circular(4.r),
+                ),
+              ),
+              child: Text('20%-',style: ts12Black400.copyWith(color: cWhiteColor),),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
