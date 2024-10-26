@@ -133,31 +133,34 @@ class FilterBottomSheet extends StatelessWidget {
             SizedBox(
               height: 58.77.h,
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.r),
-                gradient: const LinearGradient(
-                    colors: [
-                      cPrimaryColor,
-                      cSecondaryColor,
-                    ],
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.2, 0.9]),
-              ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  minimumSize: Size(
-                    MediaQuery.of(context).size.width,
-                    46.h,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.r),
-                  ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.w),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.r),
+                  gradient: const LinearGradient(
+                      colors: [
+                        cPrimaryColor,
+                        cSecondaryColor,
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.bottomRight,
+                      stops: [0.2, 0.9]),
                 ),
-                child: Text('تطبيق الفلتر', style: ts16white500),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    minimumSize: Size(
+                      MediaQuery.of(context).size.width,
+                      46.h,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                  ),
+                  child: Text('تطبيق الفلتر', style: ts16white500),
+                ),
               ),
             ),
             SizedBox(
