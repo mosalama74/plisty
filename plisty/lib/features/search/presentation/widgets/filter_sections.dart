@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/app_colors.dart';
-import 'package:plisty/core/utils/text_styles.dart';
 
-class FilterList extends StatefulWidget {
-  const FilterList({super.key,  this.firstFilterText});
-  final String? firstFilterText;
+import '../../../../core/utils/text_styles.dart';
+
+class FilterSections extends StatefulWidget {
+  const FilterSections({super.key});
+
   @override
-  State<FilterList> createState() => _FilterListState();
+  State<FilterSections> createState() => _FilterSectionsState();
 }
 
-class _FilterListState extends State<FilterList> {
+class _FilterSectionsState extends State<FilterSections> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 45.h,
-      child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return InkWell(
+    return Wrap(
+                  direction: Axis.horizontal,
+                  spacing: 10.w,
+                  runSpacing: 10.h,
+                  children: List.generate(5, (index) {
+                    return InkWell(
               onTap: () {
                 setState(() {
                   selectedIndex = index;
                 });
               },
               child: AnimatedContainer(
+                height: 40.h,  
+                width:  index == 0 ? 58.w : MediaQuery.sizeOf(context).width / 4,  
                 duration: const Duration(milliseconds: 300),
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 9.h),
                 decoration: BoxDecoration(
@@ -48,7 +51,7 @@ class _FilterListState extends State<FilterList> {
                 child: index == 0
                     ? Center(
                         child: Text(
-                          widget.firstFilterText ?? 'الكل',
+                           'الكل',
                           style: ts14White700.copyWith(
                               color: selectedIndex == 0
                                   ? cWhiteColor
@@ -58,6 +61,8 @@ class _FilterListState extends State<FilterList> {
                     : Center(
                         child: Text(
                           'موسيقى',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: ts14White400.copyWith(
                             color:
                                 selectedIndex == 0 ? cDarkWhite2Color : cWhiteColor,
@@ -66,11 +71,7 @@ class _FilterListState extends State<FilterList> {
                       ),
               ),
             );
-          },
-          separatorBuilder: (context, index) => SizedBox(
-                width: 14.w,
-              ),
-          itemCount: 6),
-    );
+                  },),
+                );
   }
 }

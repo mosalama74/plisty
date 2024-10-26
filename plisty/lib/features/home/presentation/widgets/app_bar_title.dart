@@ -34,7 +34,7 @@ class AppBarTitle extends StatelessWidget {
           children: [
             Text(
               'أهلاً بك، مستخدم',
-              style: ts20Black400.copyWith(color: cWhiteColor),
+              style: ts20White400,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
@@ -51,7 +51,7 @@ class AppBarTitle extends StatelessWidget {
                 ),
                 Text(
                   'دبي، الإمارات العربية المتحدة',
-                  style: ts12Black400.copyWith(color: cDarkWhite2Color),
+                  style: ts12White400.copyWith(color: cDarkWhite2Color),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

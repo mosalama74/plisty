@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/text_styles.dart';
+import 'package:plisty/features/home/presentation/widgets/favourite_icon.dart';
 
 import '../../../../core/components/gradient_button.dart';
 import '../../../../core/components/gradient_text.dart';
@@ -13,7 +14,7 @@ class EventVerticalItem extends StatelessWidget {
       required this.eventName,
       required this.eventSort,
       required this.eventDate,
-      required this.eventLocation});
+      required this.eventLocation, });
   final String img;
   final String eventName;
   final String eventSort;
@@ -39,24 +40,7 @@ class EventVerticalItem extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.only(top: 9.88.h, start: 10.4.w),
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration: const ShapeDecoration(
-                    shape: CircleBorder(),
-                    color: cNavColor,
-                  ),
-                  child: const Icon(
-                    Icons.favorite_border_outlined,
-                    color: cWhiteColor,
-                    size: 20,
-                  ),
-                ),
-              ),
-            )
+            const FavouriteIcon(),
           ],
         ),
         SizedBox(
@@ -92,7 +76,7 @@ class EventVerticalItem extends StatelessWidget {
             ),
             Text(
              eventDate ,
-              style: ts12Black400.copyWith(color: cDarkWhiteColor2),
+              style: ts12White400.copyWith(color: cDarkWhiteColor2),
               maxLines: 1,
             ),
           ],
@@ -113,7 +97,7 @@ class EventVerticalItem extends StatelessWidget {
             ),
             Text(
               eventLocation,
-              style: ts12Black400.copyWith(color: cDarkWhiteColor2),
+              style: ts12White400.copyWith(color: cDarkWhiteColor2),
               maxLines: 1,
             ),
           ],

@@ -60,7 +60,7 @@ class EventHorizontalItem extends StatelessWidget {
                       children: [
                         GradientText(
                           text: eventName,
-                          style: ts14Black700.copyWith(color: cWhiteColor),
+                          style: ts14White700,
                         ),
                         InkWell(
                           onTap: () {},
@@ -87,7 +87,7 @@ class EventHorizontalItem extends StatelessWidget {
                         ),
                         Text(
                           eventDate,
-                          style: ts12Black400.copyWith(color: cDarkWhiteColor2),
+                          style: ts12White400.copyWith(color: cDarkWhiteColor2),
                           maxLines: 1,
                         ),
                       ],
@@ -111,7 +111,7 @@ class EventHorizontalItem extends StatelessWidget {
                             ),
                             Text(
                               eventLocation,
-                              style: ts12Black400.copyWith(
+                              style: ts12White400.copyWith(
                                   color: cDarkWhiteColor2),
                               maxLines: 1,
                             ),
@@ -139,13 +139,13 @@ class EventHorizontalItem extends StatelessWidget {
               height: 24.h,
               width: 80,
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: cRedColor.withOpacity(1),
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(4.r),
                   topLeft: Radius.circular(4.r),
                 ),
               ),
-              child: Text('20%-',style: ts12Black400.copyWith(color: cWhiteColor),),
+              child: Text('20%-',style: ts12White400,),
             ),
           ),
         ),

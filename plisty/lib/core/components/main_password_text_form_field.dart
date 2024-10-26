@@ -106,7 +106,7 @@ class _MainPasswordTextFormFieldState extends State<MainPasswordTextFormField> {
                   ),
                 ),
                 hintStyle: widget.hintStyle ??
-                    ts14Black400,/* .copyWith(color: cNewGreyColor), */
+                    ts14White400,/* .copyWith(color: cNewGreyColor), */
                 enabledBorder: widget.enabledBorder,
                 focusedBorder: widget.focusedBorder,
                 border: widget.enabledBorder,

@@ -18,7 +18,7 @@ class GradientText extends StatelessWidget {
             },
       child: Text(
         text,
-        style:style ?? ts12Black600.copyWith(color: cWhiteColor),maxLines: 1,overflow: TextOverflow.ellipsis,// Set a fallback color
+        style:style ?? ts12White600.copyWith(color: cWhiteColor),maxLines: 1,overflow: TextOverflow.ellipsis,// Set a fallback color
       ),
     );
   }

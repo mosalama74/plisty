@@ -71,10 +71,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     cornerRadius: 8.91.r,
                     radiusStyle: true,
                     onToggle: (index) {
-                      initialIndx = index!;
-                      setState(() {
-                        _isCreateAccount = !_isCreateAccount;
-                      });
+                      if (index == 0) {
+                        setState(() {
+                          _isCreateAccount = false;
+                          initialIndx = index!;
+                        });
+                      } else {
+                        setState(() {
+                          _isCreateAccount = true;
+                          initialIndx = index!;
+                        });
+                      }
                     },
                   ),
                   SizedBox(
@@ -83,8 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (_isCreateAccount)
                     MainTextFormField(
                       hintText: 'اسم المستخدم',
-                      hintStyle: ts14Black400.copyWith(
-                        color: cHintColor.withOpacity(.5),
+                      hintStyle: ts14White400.copyWith(
+                        color: cHintColor,
                       ),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r)),
@@ -92,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(8.r),
                         borderSide: const BorderSide(color: cErrorColor),
                       ),
-                      fillColor: cLightBlackColor.withOpacity(.9),
+                      fillColor: const Color(0xFF1E1E1E).withOpacity(.9),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.r),
                       ),
@@ -105,17 +112,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       keyboardType: TextInputType.emailAddress,
                     ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
+                  if (_isCreateAccount)
+                    SizedBox(
+                      height: 10.h,
+                    ),
                   MainPhoneTextFormField(
                     countryCode: '971',
                     initialCountryCode: 'AE',
                     hintText: 'رقم الهاتف',
-                    hintStyle: ts14Black400.copyWith(
+                    hintStyle: ts14White400.copyWith(
                         color: cHintColor.withOpacity(.5)),
-                    dropDownTextStyle:
-                        ts14Black500.copyWith(color: cWhiteColor),
+                    dropDownTextStyle: ts14White500,
                     prefixIconColor: cHintColor.withOpacity(.5),
                     showCountryFlag: false,
                     controller: phoneController,
@@ -129,16 +136,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.r),
                     ),
+                    disableLengthCheck: true,
                   ),
-                  MainElevatedButton(
-                      onPressed: () {
-                        context.navigateTo(const OtpScreen(
-                          phone: '',
-                          code: '',
-                          token: '',
-                        ));
-                      },
-                      label: 'تسجيل الدخول'),
+                  SizedBox(
+                    height: 32.h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 21.5.w),
+                    child: MainElevatedButton(
+                        onPressed: () {
+                          context.navigateTo(const OtpScreen(
+                            phone: '',
+                            code: '',
+                            token: '',
+                          ));
+                        },
+                        label: 'تسجيل الدخول'),
+                  ),
                   SizedBox(
                     height: 24.h,
                   ),
@@ -179,13 +193,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {},
                     child: Text(
                       'تسجيل الدخول كزائر',
-                      style: ts16Black500.copyWith(color: cTextbtnColor),
+                      style: ts16White500.copyWith(color: cTextbtnColor),
                     ),
                   ),
                   SizedBox(
-                    height: 120.h,
+                    height: _isCreateAccount
+                        ? MediaQuery.of(context).size.height * .1
+                        : MediaQuery.of(context).size.height * .18,
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        LocalizeWidget(),
+                      ],
+                    ),
                   ),
-                  const LocalizeWidget(),
                 ],
               ),
             ),

@@ -28,7 +28,7 @@ class _LocalizeWidgetState extends State<LocalizeWidget> {
                 value: item,
                 child: Text(
                   item,
-                  style: ts14Black400.copyWith(color: cWhiteColor),
+                  style: ts14White400,
                 ),
               );
             }).toList(),
@@ -41,7 +41,7 @@ class _LocalizeWidgetState extends State<LocalizeWidget> {
             value: _dropDownValue,
             iconSize: 24.h,
             elevation: 0,
-            style: ts14Black400.copyWith(color: cWhiteColor),
+            style: ts14White400,
             dropdownColor: cLightBlackColor,
             iconDisabledColor: cWhiteColor,
             iconEnabledColor: cWhiteColor,

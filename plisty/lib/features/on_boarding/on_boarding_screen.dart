@@ -48,7 +48,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               return Stack(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height,
+                    height: MediaQuery.sizeOf(context).height,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -77,9 +77,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                         Text(
                           itemElement.items[index].text,
-                          style: ts20Black700.copyWith(
-                            color: cWhiteColor,
-                          ),
+                          style: ts20White700,
                           maxLines: 1,
                           textAlign: TextAlign.center,
                         ),
@@ -88,9 +86,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                         Text(
                           itemElement.items[index].subText!,
-                          style: ts14Black400.copyWith(
-                            color: cWhiteColor,
-                          ),
+                          style: ts14White400,
                           maxLines: 2,
                           textAlign: TextAlign.center,
                         ),

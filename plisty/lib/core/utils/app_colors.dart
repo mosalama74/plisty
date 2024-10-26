@@ -15,7 +15,9 @@ const cGreyColor = Color(0xff8E8E8E);
 const cLightGreyColor = Color(0xffF1F1F1);
 const cNewGreyColor = Color(0xff959595);
 const cDarkGreyColor = Color(0xff4C4C4F);
+const cMicColor = Color(0xff666666);
 const cNavColor = Color(0xff3C3C43);
+const cRedColor = Color(0x99FF2B2B);
 const cDarkWhiteColor2 = Color(0xffefefef);
 
 

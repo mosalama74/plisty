@@ -35,7 +35,7 @@ class EventsScreen extends StatelessWidget {
               ),
               Text(
                 isNearbyEvents ? 'أحداث قريبة منك' : 'أحداث قادمة',
-                style: ts16Black400.copyWith(color: cWhiteColor),
+                style: ts16White400,
               ),
             ],
           ),
@@ -85,18 +85,15 @@ class EventsScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       'يوجد',
-                                      style: ts12Black400.copyWith(
-                                          color: cWhiteColor),
+                                      style: ts12White400,
                                     ),
                                     GradientText(
                                       text: ' 7 ',
-                                      style: ts12Black400.copyWith(
-                                          color: cWhiteColor),
+                                      style: ts12White400,
                                     ),
                                     Text(
                                       'أحداث قريبة منك',
-                                      style: ts12Black400.copyWith(
-                                          color: cWhiteColor),
+                                      style: ts12White400,
                                     ),
                                   ],
                                 ),
@@ -105,13 +102,11 @@ class EventsScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       'الترتيب بحسب:',
-                                      style: ts12Black400.copyWith(
-                                          color: cWhiteColor),
+                                      style: ts12White400,
                                     ),
                                     Text(
                                       'التاريخ',
-                                      style: ts12Black400.copyWith(
-                                          color: cWhiteColor),
+                                      style: ts12White400,
                                     ),
                                     InkWell(
                                       onTap: (){},

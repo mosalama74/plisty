@@ -22,7 +22,7 @@ final String btnName;
               end: Alignment.centerRight,
               stops: [0.1, 0.8]),
       ),
-      child: Text(btnName,style:ts12Black400.copyWith(color: cWhiteColor,),),
+      child: Text(btnName,style:ts12White400,),
     );
   }
 }

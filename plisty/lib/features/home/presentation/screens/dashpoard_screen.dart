@@ -35,6 +35,7 @@ class _DashpoardScreenState extends State<DashpoardScreen> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomAppBar(
+        height: 80.h,
         color: Colors.transparent,
         elevation: 0,
         notchMargin: 0,

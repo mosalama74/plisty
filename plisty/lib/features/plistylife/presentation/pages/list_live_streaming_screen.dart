@@ -34,7 +34,7 @@ class ListLiveStreamingScreen extends StatelessWidget {
               ),
               Text(
                 'بليستي لايف',
-                style: ts16Black400.copyWith(color: cDarkWhite2Color),
+                style: ts16White400.copyWith(color: cDarkWhite2Color),
               ),
             ],
           ),

@@ -23,14 +23,14 @@ class ItemHeaderWidget extends StatelessWidget {
         children: [
           Text(
             prefixtext??'',
-            style: ts14Black600.copyWith(color: cDarkWhite2Color),
+            style: ts14White600.copyWith(color: cDarkWhite2Color),
             maxLines: 1,
           ),
           TextButton(
             onPressed: onPressed,
             child: Text(
               suffixtext??'',
-              style: ts14Black600.copyWith(
+              style: ts14White600.copyWith(
                   fontWeight: FontWeight.w400, color: cPrimaryColor),
               maxLines: 1,
             ),

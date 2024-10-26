@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:plisty/core/utils/extentions.dart';
 import 'package:plisty/core/utils/text_styles.dart';
-import 'package:plisty/features/home/presentation/widgets/filter_bottom_sheet.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 
 class SearchTffIconBtn extends StatelessWidget {
-  const SearchTffIconBtn({super.key, this.suffixIcon, this.prefixIcon,});
+  const SearchTffIconBtn({super.key, this.suffixIcon, this.prefixIcon, this.onPressed,});
   final IconData? suffixIcon;
   final Widget? prefixIcon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,29 +17,28 @@ class SearchTffIconBtn extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
+            clipBehavior: Clip.antiAliasWithSaveLayer,
             alignment: AlignmentDirectional.center,
             padding: const EdgeInsetsDirectional.only(start: 10),
             decoration: BoxDecoration(
-              boxShadow: const [
-                BoxShadow(
-                    blurStyle: BlurStyle.outer,
-                    blurRadius: 2,
-                    color: Color.fromARGB(255, 232, 228, 228))
-              ],
-              borderRadius: BorderRadius.circular(14.r),
+              color: cDarkGreyColor,
+             
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: TextFormField(
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 hintText: 'بحث',
-                hintStyle: ts14Black400.copyWith(color: cDarkWhite2Color),
+                hintStyle: ts14White400.copyWith(color: cDarkWhite2Color),
                 suffixIcon: Icon(
                    suffixIcon ?? Icons.mic_none_outlined,
-                  color: cDarkWhite2Color,
+                  color: cMicColor,
                   size: 25,
                 ),
                 prefixIcon: prefixIcon, 
+                prefixIconColor: cMicColor,
                 border: InputBorder.none,
+                
               ),
             ),
           ),
@@ -61,9 +59,7 @@ class SearchTffIconBtn extends StatelessWidget {
               stops: [0.1, 0.8]),
           ),
           child: IconButton(
-            onPressed: () {
-              context.navigateTo(FilterBottomSheet());
-            },
+            onPressed: onPressed,
             icon: SvgPicture.asset(
               'assets/icons/mi_filter.svg',
               color: cWhiteColor,

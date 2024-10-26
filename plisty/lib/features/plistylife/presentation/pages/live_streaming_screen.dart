@@ -41,6 +41,7 @@ class _LiveStreamingPageState extends State<LiveStreamingPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
@@ -73,7 +74,7 @@ class _LiveStreamingPageState extends State<LiveStreamingPage> {
                 ),
                 Text(
                   'بليستي لايف',
-                  style: ts16Black400.copyWith(color: cDarkWhite2Color),
+                  style: ts16White400.copyWith(color: cDarkWhite2Color),
                 ),
               ],
             ),
@@ -91,7 +92,6 @@ class _LiveStreamingPageState extends State<LiveStreamingPage> {
                   blurRadius: 1,
                 )
               ],
-             
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

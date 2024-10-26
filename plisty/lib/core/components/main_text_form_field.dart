@@ -81,12 +81,11 @@ class MainTextFormField extends StatelessWidget {
         children: [
           if (label != null) ...[
             Text("$label ${isRequired ? "*" : ""}",
-                style: labelStyle ?? ts14Black400),
+                style: labelStyle ?? ts14White400),
             SizedBox(height: 12.h),
           ],
           Container(
             decoration: BoxDecoration(
-                  color: cDarkGreyColor,
                   borderRadius: BorderRadius.circular(8.r),
                 ),
             child: TextFormField(
@@ -114,7 +113,7 @@ class MainTextFormField extends StatelessWidget {
               textAlignVertical: TextAlignVertical.center,
               
               obscureText: obscureText,
-              style: hintStyle ?? ts14Black400,
+              style: hintStyle ?? ts14White400,
               maxLength: maxLength,
               decoration: InputDecoration(
                 filled: filled ?? true,
@@ -133,7 +132,7 @@ class MainTextFormField extends StatelessWidget {
                         onPressed: onPressedSuffix ?? () {},
                         icon: Icon(
                           suffixIcon ?? Icons.search,
-                          color: suffixColor ?? cBlackColor,
+                          color: suffixColor ?? cWhiteColor,
                           size: suffixSize ?? 14.r,
                         ))
                     : suffixWidget,
@@ -146,7 +145,7 @@ class MainTextFormField extends StatelessWidget {
                     BoxConstraints.expand(width: 24.w, height: 0.h),
                 prefixIcon: const SizedBox(),
                 hintStyle:
-                    hintStyle ?? ts14Black400.copyWith(color: cNewGreyColor),
+                    hintStyle ?? ts14White400.copyWith(color: cNewGreyColor),
                 enabledBorder: enabledBorder ?? mainEnabledInputBorder,
                 disabledBorder: disabledBorder ?? mainEnabledInputBorder,
                 focusedBorder: focusedBorder ?? mainEnabledInputBorder,

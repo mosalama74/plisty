@@ -85,18 +85,18 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                     Text(
                       'التحقق من رقم الهاتف',
-                      style: ts24Black700.copyWith(color: cWhiteColor),
+                      style: ts24White700,
                     ),
                     SizedBox(
                       height: 16.h,
                     ),
                     Text(
                       'ادخل رمز التحقق المكون من 4 أرقام الذي أرسل إلى',
-                      style: ts13Black700.copyWith(color: cWhiteColor),
+                      style: ts13White700,
                     ),
                     Text(
                       '+971 1234567890 ',
-                      style: ts13Black600.copyWith(color: cWhiteColor),
+                      style: ts13White600,
                     ),
                     SizedBox(
                       height: 32.h,
@@ -133,6 +133,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       },
                       builder: (context, state) {
                         return MainElevatedButton(
+                          
                           label: "إرسال",
                           isLoading: state is VerifyOtpLoadingState,
                           onPressed: () {
@@ -176,7 +177,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           onPressed: () {},
                           child: Text(
                             'إعادة إرسال الرمز',
-                            style: ts12Black600.copyWith(
+                            style: ts12White600.copyWith(
                                 color: cTextbtnColor,
                                 decoration: TextDecoration.underline,
                                 decorationColor: cTextbtnColor),

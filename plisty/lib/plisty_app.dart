@@ -36,13 +36,13 @@ class PlistyApp extends StatelessWidget {
                 backgroundColor: cLightBlackColor,
                 systemOverlayStyle: SystemUiOverlayStyle(
                   statusBarBrightness: Brightness.dark,
-                  statusBarColor: Colors.transparent,
+                  statusBarColor: cLightBlackColor,
                   statusBarIconBrightness: Brightness.light,
                 ),
               ),
               fontFamily: 'Nunito',
               bottomAppBarTheme: const BottomAppBarTheme(
-                color: Colors.white,
+                color: cLightBlackColor,
                 // Set the default color here if needed
               ),
             ),
