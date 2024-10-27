@@ -35,7 +35,7 @@ class CustomPinCodeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: textDirection ?? TextDirection.ltr,
-      child: PinCodeTextField(
+      child: PinCodeTextField(enabled: true,
         cursorColor: cPrimaryColor,
         enableActiveFill: true,
         autovalidateMode: AutovalidateMode.onUserInteraction,

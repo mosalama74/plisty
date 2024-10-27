@@ -15,6 +15,7 @@ import '../../../../core/utils/text_styles.dart';
 import '../../../home/presentation/screens/home_screen.dart';
 import '../../cubit/otp_cubit.dart';
 import '../widgets/custom_pin_code_field.dart';
+import '../widgets/otp_verification.dart';
 import '../widgets/reset_code_widget.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -103,18 +104,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                     Form(
                       key: formKey,
-                      child: CustomPinCodeWidget(
-                        pinCodeController: pinCodeController,
-                        onCompleted: (otp) {},
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "";
-                          } else if (value.length < 4) {
-                            return "";
-                          }
-                          return null;
-                        },
-                      ),
+                      child: const OtpVerification(),
                     ),
                     SizedBox(
                       height: 20.h,
