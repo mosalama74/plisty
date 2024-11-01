@@ -10,12 +10,13 @@ class RatingStar extends StatefulWidget {
     this.itemCount,
     this.itemSize,
     this.initialRating,
-    this.updateOnDrag,
+    this.updateOnDrag, this.isRateValeShow,
   });
 
   final int? itemCount;
   final double? itemSize, initialRating;
   final bool? updateOnDrag;
+  final bool? isRateValeShow;
 
   @override
   State<RatingStar> createState() => _RatingStarState();
@@ -37,8 +38,8 @@ class _RatingStarState extends State<RatingStar> {
           glow: widget.updateOnDrag ?? false,
           glowColor: cPrimaryColor,
           itemCount: widget.itemCount ?? 5,
-          updateOnDrag: widget.updateOnDrag ?? false,
-          unratedColor: cGreyColor,
+          updateOnDrag: true,
+          unratedColor: cWhiteColor,
           itemSize: widget.itemSize ?? 16,
           itemBuilder: (context, index) => const Icon(
             Icons.star,
@@ -51,7 +52,8 @@ class _RatingStarState extends State<RatingStar> {
         SizedBox(
           width: 5.w,
         ),
-        Text('$rateVal '),
+        widget.isRateValeShow == true ? Text('${rateVal.round()}/5') : Container(),
+       
         
       ],
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/components/gradient_button.dart';
+import '../../../../core/components/gradient_heart_icon.dart';
 import '../../../../core/components/gradient_icon.dart';
 import '../../../../core/components/gradient_text.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -27,7 +28,7 @@ class EventHorizontalItem extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: MediaQuery.sizeOf(context).width - 55.w,
+          width: MediaQuery.sizeOf(context).width - 50.w,
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 3.61.h),
           decoration: BoxDecoration(
             color: cNavColor,
@@ -62,13 +63,7 @@ class EventHorizontalItem extends StatelessWidget {
                           text: eventName,
                           style: ts14White700,
                         ),
-                        InkWell(
-                          onTap: () {},
-                          child: const GradientIcon(
-                            icon: Icons.favorite,
-                            size: 20,
-                          ),
-                        ),
+                        GradientHeartIcon(onTap: (){},),
                       ],
                     ),
                     SizedBox(
@@ -129,8 +124,6 @@ class EventHorizontalItem extends StatelessWidget {
           ),
         ),
         Positioned(
-
-          
           right: -20,
           child: Transform.rotate(
             angle: 45 * 3.14159 / 180,

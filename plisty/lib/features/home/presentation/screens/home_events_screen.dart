@@ -4,11 +4,11 @@ import 'package:plisty/core/components/gradient_text.dart';
 import 'package:plisty/core/utils/app_colors.dart';
 import 'package:plisty/core/utils/extentions.dart';
 import 'package:plisty/core/utils/text_styles.dart';
-import 'package:plisty/features/events/presentation/widgets/nearby_and_upcoming_events_Item.dart';
-import '../../../home/presentation/widgets/search_tff_icon_btn.dart';
+import 'package:plisty/features/home/presentation/widgets/nearby_and_upcoming_events_Item.dart';
+import '../widgets/search_tff_icon_btn.dart';
 
-class EventsScreen extends StatelessWidget {
-  const EventsScreen({super.key, required this.isNearbyEvents});
+class HomeEventsScreen extends StatelessWidget {
+  const HomeEventsScreen({super.key, required this.isNearbyEvents});
   final bool isNearbyEvents;
 
   @override

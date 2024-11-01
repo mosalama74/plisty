@@ -20,14 +20,21 @@ class PlistyLife extends StatelessWidget {
             context.navigateTo(const ListLiveStreamingScreen());
           },
         ),
-        SizedBox(height: 10.h,),
+
         SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: 200.h,
-          child: Row(
+            width: MediaQuery.of(context).size.width,
+            height: 200.h,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const VideoLifeItem(),
+                separatorBuilder: (context, index) => SizedBox(
+                  width: 10.w,
+                ),
+                itemCount: 10)
+            /*  Row(
             children: List.generate(3, (index) => const Expanded(child: VideoLifeItem()),),
-          ),
-        ),
+          ), */
+            ),
       ],
     );
   }

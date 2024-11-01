@@ -68,7 +68,7 @@ class _FilterListState extends State<FilterList> {
             );
           },
           separatorBuilder: (context, index) => SizedBox(
-                width: 14.w,
+                width: 10.w,
               ),
           itemCount: 6),
     );

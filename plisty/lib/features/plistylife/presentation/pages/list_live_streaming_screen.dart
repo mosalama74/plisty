@@ -43,18 +43,17 @@ class ListLiveStreamingScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsetsDirectional.only(end: 15.w, start: 25.w),
         child: ListView.separated(
-            itemBuilder: (context, index) => SizedBox(
-                height: MediaQuery.of(context).size.height / 3,
-                child: InkWell(
-                  onTap: (){
-                    context.navigateTo(const LiveStreamingPage());
-                  },
-                  child: const VideoLifeItem(
-                    borderRadius: 25.33,
-                    fontSize: 10.44,
-                    iconHeight: 21.29,
-                  ),
-                )),
+            itemBuilder: (context, index) => InkWell(
+              onTap: (){
+                context.navigateTo(const LiveStreamingPage());
+              },
+              child: VideoLifeItem(
+                borderRadius: 25.33,
+                fontSize: 10.44,
+                iconHeight: 21.29,
+                itemWidth: MediaQuery.sizeOf(context).width,
+              ),
+            ),
             separatorBuilder: (context, index) => SizedBox(
                   height: 16.h,
                 ),

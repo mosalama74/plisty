@@ -27,6 +27,16 @@ TextStyle ts10White500 = TextStyle(
   fontWeight: FontWeight.w500,
   fontSize: 10.sp,
 );
+TextStyle ts10White200 = TextStyle(
+  color: cWhiteColor,
+  fontWeight: FontWeight.w200,
+  fontSize: 10.sp,
+);
+TextStyle ts10White300 = TextStyle(
+  color: cWhiteColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 10.sp,
+);
 
 //------- 12 ---------
 TextStyle ts12White300 = TextStyle(
@@ -109,6 +119,11 @@ TextStyle ts14White800 = TextStyle(
   fontSize: 14.sp,
 );
 //------- 16 ---------
+TextStyle ts16White300 = TextStyle(
+  color: cWhiteColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 16.sp,
+);
 TextStyle ts16White400 = TextStyle(
   color: cWhiteColor,
   fontWeight: FontWeight.w400,
@@ -198,4 +213,11 @@ TextStyle ts32White700 = TextStyle(
   color: cWhiteColor,
   fontWeight: FontWeight.w700,
   fontSize: 32.sp,
+);
+//------- 64 ---------
+
+TextStyle ts64White900 = TextStyle(
+  color: cWhiteColor,
+  fontWeight: FontWeight.w900,
+  fontSize: 64.sp,
 );

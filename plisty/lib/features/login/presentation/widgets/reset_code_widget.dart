@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timer_count_down/timer_controller.dart';
 
-import '../../../../core/components/main_elevated_button.dart';
+import '../../../../core/components/main_elevated_gradient_button.dart';
 
 class ResendCodeButtonWidget extends StatefulWidget {
   const ResendCodeButtonWidget({
@@ -20,7 +20,7 @@ class ResendCodeButtonWidget extends StatefulWidget {
 class _ResendCodeButtonWidgetState extends State<ResendCodeButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return MainElevatedButton(
+    return MainElevatedGradientButton(
       
         enabled: (widget.controller.isCompleted ?? false),
         onPressed: (widget.controller.isCompleted ?? false)

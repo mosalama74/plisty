@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/text_styles.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_gradients.dart';
 
 class OtpVerification extends StatelessWidget {
   const OtpVerification({super.key});
@@ -30,14 +31,7 @@ class OtpVerification extends StatelessWidget {
         borderRadius: BorderRadiusDirectional.all(
           Radius.circular(8.r),
         ),
-        gradient: const LinearGradient(
-            colors: [
-              cOtp1Color,
-              Color(0xFF00F7FF),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.2, 0.9]),
+        gradient: otpGradient,
        
       ),
       child: Directionality(
@@ -52,12 +46,11 @@ class OtpVerification extends StatelessWidget {
               filled: true,
               hintText: '-',
               hintStyle: const TextStyle(color: cHintColor),
-              fillColor: Theme.of(context).scaffoldBackgroundColor,
+              fillColor: Colors.transparent.withOpacity(.8),
               border:OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.r),
                 borderSide: BorderSide.none,
               ),
-            contentPadding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 10.w),
              ),
           keyboardType: TextInputType.number,
           textAlign: TextAlign.center,

@@ -4,7 +4,7 @@ import 'package:plisty/core/utils/text_styles.dart';
 
 import '../utils/app_colors.dart';
 
-class MainElevatedButton extends StatelessWidget {
+class MainElevatedGradientButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final String label;
   final bool enabled;
@@ -17,7 +17,7 @@ class MainElevatedButton extends StatelessWidget {
   final AlignmentGeometry? beginGragient;
   final AlignmentGeometry? endGragient;
 
-  const MainElevatedButton({
+  const MainElevatedGradientButton({
     super.key,
     required this.onPressed,
     required this.label,

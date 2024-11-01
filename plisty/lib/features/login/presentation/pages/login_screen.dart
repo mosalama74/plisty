@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:plisty/core/components/main_elevated_button.dart';
+import 'package:plisty/core/components/main_elevated_gradient_button.dart';
 import 'package:plisty/core/components/main_phone_text_form_field.dart';
 import 'package:plisty/core/components/main_text_form_field.dart';
 import 'package:plisty/core/utils/extentions.dart';
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 21.5.w),
-                    child: MainElevatedButton(
+                    child: MainElevatedGradientButton(
                         onPressed: () {
                           context.navigateTo(const OtpScreen(
                             phone: '',

@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:plisty/core/components/main_elevated_button.dart';
-import 'package:plisty/core/components/main_text_form_field.dart';
 import 'package:plisty/core/utils/app_colors.dart';
 import 'package:plisty/core/utils/text_styles.dart';
 import 'package:plisty/features/home/presentation/widgets/filter_list.dart';
+import 'package:plisty/features/search/presentation/widgets/date_form_field.dart';
 import 'package:plisty/features/search/presentation/widgets/filter_sections.dart';
 
-class FilterBottomSheet extends StatelessWidget {
+import 'main_drop_down_button.dart';
+
+
+class FilterBottomSheet extends StatefulWidget {
   const FilterBottomSheet({super.key});
+
+  @override
+  State<FilterBottomSheet> createState() => _FilterBottomSheetState();
+}
+
+class _FilterBottomSheetState extends State<FilterBottomSheet> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,22 +67,7 @@ class FilterBottomSheet extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            MainTextFormField(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                hintText: 'اختر',
-                hintStyle: ts14White400.copyWith(
-                  color: cDarkWhite2Color,
-                ),
-                suffixWidget: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.calendar_month_outlined,
-                    color: cDarkWhite2Color,
-                  ),
-                ),
-                fillColor: cDarkGreyColor),
+            const DateFormField(),
             SizedBox(
               height: 16.h,
             ),
@@ -86,22 +80,7 @@ class FilterBottomSheet extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            MainTextFormField(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                hintText: 'اختر',
-                hintStyle: ts14White400.copyWith(
-                  color: cDarkWhite2Color,
-                ),
-                suffixWidget: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: cDarkWhite2Color,
-                  ),
-                ),
-                fillColor: cDarkGreyColor),
+            const MainDropDownButton(),
             SizedBox(
               height: 16.h,
             ),
@@ -114,22 +93,7 @@ class FilterBottomSheet extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            MainTextFormField(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                hintText: 'اختر',
-                hintStyle: ts14White400.copyWith(
-                  color: cDarkWhite2Color,
-                ),
-                suffixWidget: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: cDarkWhite2Color,
-                  ),
-                ),
-                fillColor: cDarkGreyColor),
+            const MainDropDownButton(),
             SizedBox(
               height: 58.77.h,
             ),

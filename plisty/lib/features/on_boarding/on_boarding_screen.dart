@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/text_styles.dart';
-import '../../core/components/main_elevated_button.dart';
+import '../../core/components/main_elevated_gradient_button.dart';
 import '../login/presentation/pages/login_screen.dart';
 import 'on_boarding_items.dart';
 
@@ -93,7 +93,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         SizedBox(
                           height: 30.h,
                         ),
-                        MainElevatedButton(
+                        MainElevatedGradientButton(
                           label: 'ابدأ الأن',
                           onPressed: () async {
                             final prefs = await SharedPreferences.getInstance();

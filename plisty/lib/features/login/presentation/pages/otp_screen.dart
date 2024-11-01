@@ -8,15 +8,12 @@ import 'package:plisty/features/login/presentation/widgets/drop_down_widget.dart
 import 'package:timer_count_down/timer_controller.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
-import '../../../../core/components/main_elevated_button.dart';
+import '../../../../core/components/main_elevated_gradient_button.dart';
 import '../../../../core/services/service_locator.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';
-import '../../../home/presentation/screens/home_screen.dart';
 import '../../cubit/otp_cubit.dart';
-import '../widgets/custom_pin_code_field.dart';
 import '../widgets/otp_verification.dart';
-import '../widgets/reset_code_widget.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen(
@@ -122,7 +119,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         // }
                       },
                       builder: (context, state) {
-                        return MainElevatedButton(
+                        return MainElevatedGradientButton(
                           
                           label: "إرسال",
                           isLoading: state is VerifyOtpLoadingState,

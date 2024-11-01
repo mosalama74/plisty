@@ -6,7 +6,6 @@ import 'package:plisty/generated/l10n.dart';
 import 'package:plisty/splash/splash_screen.dart';
 
 import 'core/utils/app_colors.dart';
-import 'features/on_boarding/on_boarding_screen.dart';
 
 class PlistyApp extends StatelessWidget {
   const PlistyApp({super.key});
@@ -30,15 +29,16 @@ class PlistyApp extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
+              useMaterial3: true,
               scaffoldBackgroundColor: cLightBlackColor,
               appBarTheme: const AppBarTheme(
                 elevation: 0,
                 backgroundColor: cLightBlackColor,
-                systemOverlayStyle: SystemUiOverlayStyle(
+                /* systemOverlayStyle: SystemUiOverlayStyle(
                   statusBarBrightness: Brightness.dark,
                   statusBarColor: cLightBlackColor,
                   statusBarIconBrightness: Brightness.light,
-                ),
+                ), */
               ),
               fontFamily: 'Nunito',
               bottomAppBarTheme: const BottomAppBarTheme(
