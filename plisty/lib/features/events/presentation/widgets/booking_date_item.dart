@@ -28,7 +28,7 @@ class _BookingDateItemState extends State<BookingDateItem> {
           height: 10.h,
         ),
         SizedBox(
-          height: 68.h,
+          height: 72.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => itemBody(index),

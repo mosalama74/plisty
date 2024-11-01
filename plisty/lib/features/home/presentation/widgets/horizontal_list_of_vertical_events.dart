@@ -20,7 +20,7 @@ class HorizontalListOfVerticalEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 240.h,
+      height: 250.h,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) =>  InkWell(

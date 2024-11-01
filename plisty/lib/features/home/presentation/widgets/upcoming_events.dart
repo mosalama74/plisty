@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/extentions.dart';
-import 'package:plisty/features/home/presentation/widgets/event_horizontal_item.dart';
 import 'package:plisty/features/home/presentation/widgets/horizontal_list_of_horizontal_event.dart';
 
 import '../screens/home_events_screen.dart';

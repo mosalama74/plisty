@@ -18,7 +18,7 @@ class Best10Offers extends StatelessWidget {
           prefixtext: 'أفضل 10 عروض',
         ),
         SizedBox(
-          height: 240.h,
+          height: 250.h,
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Stack(

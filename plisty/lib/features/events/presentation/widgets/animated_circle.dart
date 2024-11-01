@@ -3,14 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/utils/app_colors.dart';
 
 class AnimatedCircle extends StatefulWidget {
-  const AnimatedCircle({super.key});
+  const AnimatedCircle({super.key,required this.borderColor,required this.fillColor});
+  final Color borderColor;
+  final Color fillColor;
 
   @override
   State<AnimatedCircle> createState() => _AnimatedCircleState();
 }
 
 class _AnimatedCircleState extends State<AnimatedCircle> {
-  bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,25 +21,19 @@ class _AnimatedCircleState extends State<AnimatedCircle> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: _isSelected ? cPrimaryColor : cDarkWhite2Color,
+          color: widget.borderColor,
           width: 1,
         ),
       ),
-      child: InkWell(
-        onTap: (){
-          setState(() {
-            _isSelected = !_isSelected;
-          });
-        },
-        child: Container(
-          width: 20.w,
-          height: 20.h,
-          decoration: BoxDecoration(
-            color: _isSelected ? cPrimaryColor :Colors.transparent,
-            shape: BoxShape.circle,
-          ),
+      child: Container(
+        width: 20.w,
+        height: 20.h,
+        decoration: BoxDecoration(
+          color: widget.fillColor,
+          shape: BoxShape.circle,
         ),
       ),
     );
   }
+  
 }

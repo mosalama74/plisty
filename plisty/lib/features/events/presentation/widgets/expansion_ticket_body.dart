@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plisty/core/utils/app_colors.dart';
 import 'package:plisty/core/utils/text_styles.dart';
 
 import '../../../../core/utils/app_gradients.dart';

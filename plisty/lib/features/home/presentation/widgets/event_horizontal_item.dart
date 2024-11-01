@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/components/gradient_button.dart';
 import '../../../../core/components/gradient_heart_icon.dart';
-import '../../../../core/components/gradient_icon.dart';
 import '../../../../core/components/gradient_text.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';

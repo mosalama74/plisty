@@ -17,7 +17,6 @@ import '../widgets/expansion_ticket_body.dart';
 import '../widgets/galary.dart';
 import '../widgets/header_expansion_schedule.dart';
 import '../widgets/header_expansion_ticket_type.dart';
-import '../widgets/location_item.dart';
 import '../widgets/location_ratings_organizers.dart';
 import '../widgets/show_event_highlights.dart';
 import 'events_booking_screen.dart';

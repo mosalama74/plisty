@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plisty/core/utils/app_colors.dart';
 
 class GradientOutlineText extends StatelessWidget {
   final String text;
