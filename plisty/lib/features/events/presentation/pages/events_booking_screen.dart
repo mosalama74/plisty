@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:plisty/core/components/main_elevated_gradient_button.dart';
 import 'package:plisty/core/utils/extentions.dart';
 import 'package:plisty/features/events/presentation/pages/events_payment.dart';
+import 'package:plisty/features/events/presentation/widgets/gradient_chec_box.dart';
 
-import '../../../../core/components/custom_check_box.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../widgets/booking_date_item.dart';
@@ -98,19 +98,21 @@ class EventsBookingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CustomCheckBox(
-                    checkBoxLable: 'أوافق على',
-                    checkBoxLableStyle: ts12White400,
+               Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const GradientChecBox(),
+                      SizedBox(width: 10.w,),
+                      Text(
+                        'أوافق على',
+                        style: ts12White400,
+                      ),
+                      Text(
+                        'سياسة الحفل',
+                        style: ts12White400.copyWith(color: cPrimaryColor),
+                      ),
+                    ],
                   ),
-                  Text(
-                    'سياسة الحفل',
-                    style: ts12White400.copyWith(color: cPrimaryColor),
-                  ),
-                ],
-              ),
               SizedBox(
                 height: 10.28.h,
               ),
@@ -119,14 +121,15 @@ class EventsBookingScreen extends StatelessWidget {
                 height: 10.h,
               ),
               const BookingInvoiceDetails(),
-             
               Padding(
-                padding: EdgeInsetsDirectional.only(start: 40.5.w,end: 39.5.w,top: 20.44.h,bottom: 20.44.h),
-                child: MainElevatedGradientButton(onPressed: (){
-                  context.navigateTo(const EventsPayment());
-                }, label: 'المتابعة'),
+                padding: EdgeInsetsDirectional.only(
+                    start: 40.5.w, end: 39.5.w, top: 20.44.h, bottom: 20.44.h),
+                child: MainElevatedGradientButton(
+                    onPressed: () {
+                      context.navigateTo(const EventsPayment());
+                    },
+                    label: 'المتابعة'),
               ),
-             
             ],
           ),
         ),

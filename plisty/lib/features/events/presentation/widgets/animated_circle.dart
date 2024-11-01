@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:plisty/core/utils/app_colors.dart';
 
 class AnimatedCircle extends StatefulWidget {
   const AnimatedCircle({super.key,required this.borderColor,required this.fillColor});

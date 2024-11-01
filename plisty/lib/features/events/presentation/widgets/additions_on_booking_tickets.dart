@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/components/custom_check_box.dart';
+import '../../../../core/components/main_check_box_item.dart';
 import '../../../../core/utils/text_styles.dart';
 
 class AdditionsOnBookingTickets extends StatelessWidget {
@@ -21,27 +21,14 @@ class AdditionsOnBookingTickets extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        itemBody(),
+        const MainCheckBoxItem(),
         SizedBox(
           height: 10.h,
         ),
-         itemBody(),
+        const MainCheckBoxItem(),
       ],
     );
   }
 
-  Widget itemBody() {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const CustomCheckBox(
-            checkBoxLable: 'دخول وراء الكواليس',
-          ),
-          Text(
-            '+10.00 درهم',
-            style: ts12White400,
-          ),
-        ],
-      );
-  }
+
 }
